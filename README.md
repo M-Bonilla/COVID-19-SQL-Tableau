@@ -37,7 +37,7 @@ The analysis includes:
 The SQL results were prepared and exported to Excel before being
 connected to Tableau for visualization.
 
-![COVID-19 Dashboard](Images/covid-dashboard.png)
+![COVID-19 Dashboard](Images/Covid-dashboard.png)
 
 ## Key Analysis
 
