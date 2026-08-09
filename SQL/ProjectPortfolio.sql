@@ -229,41 +229,6 @@ Join CovidVaccinations AS vac
 	and dea.date = vac.date
 Where dea.continent is not null 
 
-
-/*-------------------------------------------------------------------
-10. Aditional Exploratory Analysis  
--------------------------------------------------------------------*/
-select * from CovidVaccinations
-order by 3,4
-
-
-Select	 
-		dea.location, 
-		dea.population, 
-		SUM (cast(vac.new_vaccinations as int)) AS TotalVaccinations,
-		SUM (cast(vac.new_vaccinations as int ))
-		/ dea.population *100  AS PercentageVaccinations
-		
-
-From CovidDeaths AS dea
-Join CovidVaccinations AS vac 
-	on dea.location = vac.location
-	and dea.date = vac.date
-
-group by dea.location, dea.population
-Order by PercentageVaccinations desc 
-
-
-
-
---Where dea.continent is not null 
---Order by 2,3 
-Group by dea.location
-
-
-
-Select	Location, 
-		population, 
 		MAX (total_cases) AS HighestInfectionCount, 
 		MAX((total_cases / population))*100 AS PercentPopulationInfetcted
 From dbo.CovidDeaths
